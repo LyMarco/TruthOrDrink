@@ -28,23 +28,21 @@
         android:layout_width="120dp"
         android:layout_height="55dp"
         android:scaleType="centerInside"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="88dp"
         android:src="@drawable/deck_ontherocks"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonHR"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintHorizontal_bias="0.762"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonHR" />
 
     <ImageButton
         android:id="@+id/imageButtonHR"
         android:layout_width="120dp"
         android:layout_height="55dp"
-        android:scaleType="centerInside"
-        android:layout_marginStart="88dp"
         android:layout_marginTop="16dp"
+        android:scaleType="centerInside"
         android:src="@drawable/deck_happyhour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -52,10 +50,11 @@
         android:id="@+id/imageButtonED"
         android:layout_width="120dp"
         android:layout_height="55dp"
-        android:layout_marginStart="88dp"
         android:layout_marginTop="16dp"
         android:scaleType="centerInside"
         android:src="@drawable/deck_extradirty2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButtonHR" />
 
@@ -63,27 +62,22 @@
         android:id="@+id/imageButtonLC"
         android:layout_width="120dp"
         android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="88dp"
         android:scaleType="centerInside"
         android:src="@drawable/deck_lastcall1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonED"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonOTR" />
+        app:layout_constraintHorizontal_bias="0.762"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonED" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="412dp"
+        android:layout_width="match_parent"
         android:layout_height="518dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="32dp"
         android:scaleType="fitCenter"
         android:src="@drawable/deck_example"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/drawButton"
@@ -93,9 +87,9 @@
         android:text="@string/Draw"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButtonED"
-        app:layout_constraintVertical_bias="0.029" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
