@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Truth or Drink</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_dashboard">Cards</string>
     <string name="title_notifications">Notifications</string>
     <string name="hello_world">Hello World!</string>
     <string name="Select">Select Deck</string>
-    <string name="Draw">Draw</string>
+    <string name="Draw">Draw Card</string>
 </resources>
