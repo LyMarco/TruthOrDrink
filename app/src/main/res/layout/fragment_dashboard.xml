@@ -55,7 +55,7 @@
         android:layout_marginStart="88dp"
         android:layout_marginTop="16dp"
         android:scaleType="centerInside"
-        android:src="@drawable/deck_extradirty"
+        android:src="@drawable/deck_extradirty2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButtonHR" />
 
@@ -77,10 +77,11 @@
         android:id="@+id/imageView2"
         android:layout_width="412dp"
         android:layout_height="518dp"
+        android:layout_marginTop="4dp"
         android:scaleType="fitCenter"
         android:src="@drawable/deck_example"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,9 +91,11 @@
         android:layout_height="43dp"
         android:layout_marginTop="16dp"
         android:text="@string/Draw"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonED" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonED"
+        app:layout_constraintVertical_bias="0.029" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
