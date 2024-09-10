@@ -1,5 +1,8 @@
 package com.example.truthordrink.ui.dashboard;
 
+import android.annotation.SuppressLint;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class DashboardFragment extends Fragment {
+public class DashboardFragment extends Fragment implements View.OnClickListener {
 
     private FragmentDashboardBinding binding;
 
@@ -61,68 +64,54 @@ public class DashboardFragment extends Fragment {
                 LCList.add(getResources().getIdentifier(f.getName(), "drawable",  getActivity().getPackageName()));
         }
 
-//        imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), EDList.get(0)));
-
-//        for (int i = R.drawable.tod_otr_3; i <= R.drawable.deck_ontherocks; i ++) {
-//            OTRList.add(i);
-//        }
-//
-//        for (int i = R.drawable.deck_happyhour; i <= R.drawable.deck_happyhour; i ++) {
-//            HOList.add(i);
-//        }
-//
-//        for (int i = R.drawable.deck_extradirty; i <= R.drawable.deck_extradirty; i ++) {
-//            EDList.add(i);
-//        }
-//
-//        for (int i = R.drawable.deck_lastcall; i <= R.drawable.deck_lastcall; i ++) {
-//            LCList.add(i);
-//        }
-
         ImageButton otrButton = binding.imageButtonOTR;
         ImageButton hrButton = binding.imageButtonHR;
         ImageButton edButton = binding.imageButtonED;
         ImageButton lcButton = binding.imageButtonLC;
         Button drawbutton = binding.drawButton;
 
-        otrButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View otrButton) {
-                imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.deck_example));
-                pickDeck = 1;
-            }
-        });
+        otrButton.setOnClickListener(this);
+        hrButton.setOnClickListener(this);
+        edButton.setOnClickListener(this);
+        lcButton.setOnClickListener(this);
 
-        hrButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View hrButton) {
-                imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.deck_example));
-                pickDeck = 2;
-            }
-        });
-
-        edButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View edButton) {
-                imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.deck_example));
-                pickDeck = 3;
-            }
-        });
-
-        lcButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View lcButton) {
-                imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.deck_example));
-                pickDeck = 4;
-            }
-        });
+//        otrButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View otrButton) {
+//                imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.deck_example));
+//                pickDeck = 1;
+//            }
+//        });
+//
+//        hrButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View hrButton) {
+//                imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.deck_example));
+//                pickDeck = 2;
+//            }
+//        });
+//
+//        edButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View edButton) {
+//                imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.deck_example));
+//                pickDeck = 3;
+//            }
+//        });
+//
+//        lcButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View lcButton) {
+//                imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.deck_example));
+//                pickDeck = 4;
+//            }
+//        });
 
         drawbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View otrButton) {
                 switch (pickDeck) {
                     case 1:
-
                         imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), OTRList.get(rand.nextInt(OTRList.size()))));
                         break;
                     case 2:
@@ -148,5 +137,24 @@ public class DashboardFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.imageButtonOTR:
+                pickDeck = 1;
+                break;
+            case R.id.imageButtonHR:
+                pickDeck = 2;
+                break;
+            case R.id.imageButtonED:
+                pickDeck = 3;
+                break;
+            case R.id.imageButtonLC:
+                pickDeck = 4;
+                break;
+        }
     }
 }
