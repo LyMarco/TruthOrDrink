@@ -28,17 +28,16 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
     private FragmentDashboardBinding binding;
 
-    private List<Integer> OTRList = new ArrayList<Integer>();
-    private List<Integer> HOList = new ArrayList<Integer>();
-    private List<Integer> EDList = new ArrayList<Integer>();
-    private List<Integer> LCList = new ArrayList<Integer>();
+    private final List<Integer> OTRList = new ArrayList<Integer>();
+    private final List<Integer> HOList = new ArrayList<Integer>();
+    private final List<Integer> EDList = new ArrayList<Integer>();
+    private final List<Integer> LCList = new ArrayList<Integer>();
 
-    private List<String> pickDeckList = Arrays.asList("OTR", "HR", "ED", "LC");
+    private final List<String> pickDeckList = Arrays.asList("OTR", "HR", "ED", "LC");
     private int pickDeck = 0;
 
 
     private Random rand = new Random();
-//    R.drawable.deck_example
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -68,7 +67,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         ImageButton hrButton = binding.imageButtonHR;
         ImageButton edButton = binding.imageButtonED;
         ImageButton lcButton = binding.imageButtonLC;
-        Button drawbutton = binding.drawButton;
+        Button drawButton = binding.drawButton;
 
         otrButton.setOnClickListener(this);
         hrButton.setOnClickListener(this);
@@ -107,9 +106,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 //            }
 //        });
 
-        drawbutton.setOnClickListener(new View.OnClickListener() {
+        drawButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View otrButton) {
+            public void onClick(View drawButton) {
                 switch (pickDeck) {
                     case 1:
                         imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), OTRList.get(rand.nextInt(OTRList.size()))));
@@ -133,10 +132,10 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         return root;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    public void setDisabled(ImageView imageButton) {
+        final ColorMatrix grayscaleMatrix = new ColorMatrix();
+        grayscaleMatrix.setSaturation(0);
+        imageButton.setColorFilter(new ColorMatrixColorFilter(grayscaleMatrix));
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -156,5 +155,11 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
                 pickDeck = 4;
                 break;
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }
