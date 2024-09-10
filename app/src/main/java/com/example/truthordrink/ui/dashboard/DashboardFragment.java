@@ -133,18 +133,21 @@ public class DashboardFragment extends Fragment {
         drawButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View drawButton) {
-                flip.start();
                 switch (pickDeck) {
                     case 1:
+                        flip.start();
                         imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), OTRList.get(rand.nextInt(OTRList.size()))));
                         break;
                     case 2:
+                        flip.start();
                         imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), HOList.get(rand.nextInt(HOList.size()))));
                         break;
                     case 3:
+                        flip.start();
                         imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), EDList.get(rand.nextInt(EDList.size()))));
                         break;
                     case 4:
+                        flip.start();
                         imageView2.setImageDrawable(ContextCompat.getDrawable(requireContext(), LCList.get(rand.nextInt(LCList.size()))));
                         break;
                     default:
