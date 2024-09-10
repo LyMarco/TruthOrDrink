@@ -1,8 +1,8 @@
 package com.example.truthordrink.ui.dashboard;
 
-import android.annotation.SuppressLint;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.truthordrink.CustomImageButton;
 import com.example.truthordrink.R;
 import com.example.truthordrink.databinding.FragmentDashboardBinding;
 
@@ -66,10 +67,10 @@ public class DashboardFragment extends Fragment {
                 LCList.add(getResources().getIdentifier(f.getName(), "drawable",  getActivity().getPackageName()));
         }
 
-        ImageButton otrButton = binding.imageButtonOTR;
-        ImageButton hrButton = binding.imageButtonHR;
-        ImageButton edButton = binding.imageButtonED;
-        ImageButton lcButton = binding.imageButtonLC;
+        CustomImageButton otrButton = binding.imageButtonOTR;
+        CustomImageButton hrButton = binding.imageButtonHR;
+        CustomImageButton edButton = binding.imageButtonED;
+        CustomImageButton lcButton = binding.imageButtonLC;
         Button drawButton = binding.drawButton;
 
 //        otrButton.setOnClickListener(this);
